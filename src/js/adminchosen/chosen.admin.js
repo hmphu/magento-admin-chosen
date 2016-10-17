@@ -3,7 +3,7 @@ var _hmpAdminChosenInit = function(el) {
     if (el.readAttribute('disable-chosen') == 1) return;
     if (el.select('option').size() < 10) return;
 
-    if (typeof el.chosenObj == 'object') {
+    if(el.chosenObj != null && typeof el.chosenObj == 'object'){
         el.chosenObj.destroy();
         el.chosenObj = null;
     }
@@ -16,6 +16,26 @@ var _hmpAdminChosenInit = function(el) {
         disable_search_threshold: 10,
         allow_single_deselect: true
     });
+}
+
+var _hmpAdminChosenFixMANADevCatalogLayeredNavigation = function(){
+    /* Begin Fix for ManaDev Layered Attribute Extension */
+    $$('input.m-default').each(function(el){
+        $(el).observe('change', function(){
+            var parent = $(el).up().up();
+            parent.select('select').each(function(select_el){
+                _hmpAdminChosenInit(select_el);
+            });
+        });
+    });
+
+    $$(".blcg-customize").each(function(el){
+        el.observe('click',function(){
+            _hmpAdminChosenAdditional();
+            _hmpAdminChosenIgnore();
+        });
+    });
+    /* End Fix for ManaDev Layered Attribute Extension */
 }
 
 if (typeof Fieldset !== 'undefined') {
@@ -38,6 +58,7 @@ if (typeof varienGlobalEvents !== 'undefined') {
                 _hmpAdminChosenInit(el);
             });
         }
+        _hmpAdminChosenFixMANADevCatalogLayeredNavigation();
     });
 }
 
