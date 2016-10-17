@@ -1,0 +1,59 @@
+<?php if(Mage::getStoreConfig('admin/adminchosen/active')): ?>
+<script type="text/javascript">
+    //<![CDATA
+    function _hmpAdminChosenIgnore(){
+        /* Ignore Elements */
+        <?php
+        $ignore_elements = explode("\r\n",Mage::getStoreConfig('admin/adminchosen/ignore_elements'));
+        if(!empty($ignore_elements)){
+            foreach($ignore_elements as $ignore_element){
+                ?>
+                $$('<?php echo trim($ignore_element) ?>').each(function(el){
+                    if(typeof el.chosenObj == 'object'){
+                        el.chosenObj.destroy();
+                    }
+                    el.writeAttribute('disable-chosen',1);
+                });
+                <?php
+            }
+        }
+        ?>
+    }
+
+    function _hmpAdminChosenAdditional(){
+        /* Additional Elements */
+        <?php
+        $additional_elements = explode("\r\n",Mage::getStoreConfig('admin/adminchosen/additional_elements'));
+        if(!empty($additional_elements)){
+            foreach($additional_elements as $additional_element){
+                ?>
+                $$('<?php echo trim($additional_element) ?>').each(function(el){
+                    _hmpAdminChosenInit(el);
+                });
+                <?php
+            }
+        }
+        ?>
+    }
+
+    Event.observe(window, 'load', function() {
+        /* Fix for ManaDev Layered Attribute Extension */
+        $$('input.m-default').each(function(el){
+            $(el).observe('change', function(){
+                var parent = $(el).up().up();
+                parent.select('select').each(function(select_el){
+                    _hmpAdminChosenInit(select_el);
+                });
+            });
+        });
+
+        $$('.section-config.active fieldset').each(function(el){
+            Fieldset.applyCollapse(el.readAttribute('id'));
+        });
+
+        _hmpAdminChosenAdditional();
+        _hmpAdminChosenIgnore();
+    });
+    //]]>
+</script>
+<?php endif; ?>

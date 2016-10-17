@@ -1,0 +1,5 @@
+src/app/code/community/HMP/AdminChosen                                         app/code/community/HMP/AdminChosen
+src/app/design/adminhtml/default/default/layout/adminchosen.xml                app/design/adminhtml/default/default/layout/adminchosen.xml
+src/app/design/adminhtml/default/default/template/adminchosen                  app/design/adminhtml/default/default/template/adminchosen
+src/app/etc/modules/HMP_AdminChosen.xml                                        app/etc/modules/HMP_AdminChosen.xml
+src/js/adminchosen                                                             js/adminchosen

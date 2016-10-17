@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<layout>
+
+    <default>
+        <reference name="head">
+            <action ifconfig="admin/adminchosen/active" method="addJs"><script>adminchosen/chosen.proto.min.js</script></action>
+            <action ifconfig="admin/adminchosen/active" method="addJs"><script>adminchosen/chosen.admin.js</script></action>
+            <action ifconfig="admin/adminchosen/active" method="addItem"><type>js_css</type><name>adminchosen/chosen.min.css</name><params/></action>
+        </reference>
+        <reference name="js">
+            <block ifconfig="admin/adminchosen/active" type="adminhtml/template" template="adminchosen/init.phtml" name="chosen.init" as="chosen_init"></block>
+        </reference>
+    </default>
+</layout>

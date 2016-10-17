@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <HMP_AdminChosen>
+            <version>0.1.0</version>
+        </HMP_AdminChosen>
+    </modules>
+    <global>
+        <helpers>
+            <adminchosen>
+                <class>HMP_AdminChosen_Helper</class>
+            </adminchosen>
+        </helpers>
+    </global>
+    <default>
+        <admin>
+            <adminchosen>
+                <active>1</active>
+                <ignore_elements><![CDATA[.section-config select]]></ignore_elements>
+            </adminchosen>
+        </admin>
+    </default>
+    <adminhtml>
+        <layout>
+            <updates>
+                <adminchosen>
+                    <file>adminchosen.xml</file>
+                </adminchosen>
+            </updates>
+        </layout>
+    </adminhtml>
+</config>

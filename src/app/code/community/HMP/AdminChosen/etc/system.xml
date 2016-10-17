@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <sections>
+        <admin>
+            <groups>
+                <adminchosen translate="label comment" module="adminchosen">
+                    <label>Admin Chosen</label>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <sort_order>901</sort_order>
+                    <fields>
+                        <active translate="label comment">
+                            <label>Enable Chosen for select elements in admin</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </active>
+                        <ignore_elements translate="label comment">
+                            <label>Ignore Elements</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <depends><active>1</active></depends>
+                        </ignore_elements>
+                        <additional_elements translate="label comment">
+                            <label>Additional Elements</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <depends><active>1</active></depends>
+                        </additional_elements>
+                    </fields>
+                </adminchosen>
+            </groups>
+        </admin>
+    </sections>
+</config>

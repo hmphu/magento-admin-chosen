@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <HMP_AdminChosen>
+            <active>true</active>
+            <codePool>community</codePool>
+        </HMP_AdminChosen>
+    </modules>
+</config>

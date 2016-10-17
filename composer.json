@@ -1,0 +1,9 @@
+{
+    "name": "hmphu/magento-admin-chosen",
+    "type": "magento-module",
+    "description": "Integrates Chosen library with admin grid",
+    "homepage": "https://github.com/hmphu/magento-admin-chosen",
+    "require": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}
