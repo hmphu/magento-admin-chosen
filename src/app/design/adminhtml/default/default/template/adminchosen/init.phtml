@@ -4,7 +4,8 @@
     function _hmpAdminChosenIgnore(){
         /* Ignore Elements */
         <?php
-        $ignore_elements = explode(",",Mage::getStoreConfig('admin/adminchosen/ignore_elements'));
+        $ignore_elements_setting = '.section-config select, .adminhtml-promo-quote-edit select, .adminhtml-promo-catalog-edit select, .adminhtml-customer-edit select, .adminhtml-system-convert-gui-edit select';
+        $ignore_elements = explode(",",$ignore_elements_setting);
         if(!empty($ignore_elements)){
             foreach($ignore_elements as $ignore_element){
                 ?>
@@ -41,8 +42,7 @@
         $$('.section-config.active fieldset').each(function(el){
             Fieldset.applyCollapse(el.readAttribute('id'));
         });
-
-        _hmpAdminChosenFixMANADevCatalogLayeredNavigation();
+        
         _hmpAdminChosenAdditional();
         _hmpAdminChosenIgnore();
     });

@@ -16,7 +16,7 @@
         <admin>
             <adminchosen>
                 <active>1</active>
-                <ignore_elements><![CDATA[.section-config select]]></ignore_elements>
+                <ignore_elements><![CDATA[]]></ignore_elements>
             </adminchosen>
         </admin>
     </default>
